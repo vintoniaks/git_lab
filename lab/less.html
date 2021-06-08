@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="css/css.style1.css"> -->
+    <!--   <link rel="stylesheet/less" type="text/css" href="less/less.style1.less">-->
+    <!--   <link rel="stylesheet/less" type="text/css" href="less/less.style2.less">-->
+    <script src="node_modules/less/dist/less.min.js"></script>
+    <script>
+        var Theme_number = 1;
+        var Default_theme = 1;
+        var Ext = "less";
+        //var Ext = "css";
+
+        function getUrl(num) {
+            return Ext + "/" + Ext + ".style" + num + ".less";
+        }
+
+        function getThemeNumber() {
+            Theme_number = Theme_number % 2 === 0 ? 1 : 2;
+            console.log(Theme_number);
+            return Theme_number;
+        }
+
+        function initialize() {
+            var link = document.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("href", getUrl(Default_theme));
+            document.head.appendChild(link);
+        }
+
+        function initListener() {
+            document
+                .querySelector(".mynav__theme")
+                .addEventListener("click", changeTheme);
+        }
+
+        function changeTheme() {
+            document.head
+                .querySelector("link")
+                .setAttribute("href", getUrl(getThemeNumber()));
+        }
+
+        initialize();
+
+        window.addEventListener("load", initListener);
+    </script>
+
+
+
+
+
+     <title>Hello, world!</title>
+ </head>
+ <body>
+
+
+ <!-- HEADER -->
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="№">
+                <!--<img src="" width="30" height="30"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav  mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.html" role="tab" aria-controls="home" aria-selected="true">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#gallery" role="tab" aria-controls="gallery" aria-selected="false">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="test.html" role="tab" aria-controls="testing" aria-selected="false">Тестирование</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light"  href="contact.html" role="tab" aria-controls="contacts" aria-selected="false">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light"  href="less.html" role="tab" aria-controls="contacts" aria-selected="false">LESS</a>
+                    </li>
+                </ul>
+
+                <ul class="nav  ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  text-light" data-toggle="modal" data-target="#exampleModal">Вход</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<div class="container">
+    <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container">
+
+                <div class="wrapper">
+                    <nav class="mynav">
+                        <button class="mynav__theme">Change theme</button>
+                        <ul class="mynav__menu">
+                            <li class="mynav__item"><a href="#" class="mynav__link">Home</a></li>
+                            <li class="mynav__item"><a href="#" class="mynav__link">About</a></li>
+                            <li class="mynav__item"><a href="#" class="mynav__link">Items</a></li>
+                            <li class="mynav__item"><a href="#" class="mynav__link">Contact</a></li>
+                        </ul>
+                    </nav>
+
+                    <section class="main">
+                        <div class="main__content">
+                            <div class="main__tile  main__tile--danger">
+                                <div class="main__header">Product 1</div>
+                                <ul class="main__features">
+                                    <li class="main__item">Feature 1<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 2<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 3<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 4</li>
+                                    <li class="main__item">Feature 5</li>
+                                </ul>
+
+                                <div class="main__footer">
+                                    <button class="main__button main__button--danger">Click on me!</button>
+                                </div>
+                            </div>
+
+                            <div class="main__tile main__tile--warning">
+                                <div class="main__header">Product 2</div>
+                                <ul class="main__features">
+                                    <li class="main__item">Feature 1<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 2</li>
+                                    <li class="main__item">Feature 3<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 4<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 5</li>
+                                </ul>
+
+                                <div class="main__footer">
+                                    <button class="main__button main__button--warning">Click on me!</button>
+                                </div>
+                            </div>
+
+                            <div class="main__tile main__tile--primary">
+                                <div class="main__header">Product 3</div>
+                                <ul class="main__features">
+                                    <li class="main__item">Feature 1</li>
+                                    <li class="main__item">Feature 2<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 3<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 4<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 5</li>
+                                </ul>
+
+                                <div class="main__footer">
+                                    <button class="main__button main__button--primary">Click on me!</button>
+                                </div>
+                            </div>
+
+                            <div class="main__tile main__tile--success">
+                                <div class="main__header">Product 4</div>
+                                <ul class="main__features">
+                                    <li class="main__item">Feature 1<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 2</li>
+                                    <li class="main__item">Feature 3</li>
+                                    <li class="main__item">Feature 4<span class="main__plus">+</span></li>
+                                    <li class="main__item">Feature 5<span class="main__plus">+</span></li>
+                                </ul>
+
+                                <div class="main__footer">
+                                    <button class="main__button main__button--success">Click on me!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title m-1" id="exampleModalLabel">Авторизация на сайте</h5>
+                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <div class="container-fluid">
+                     <form>
+                         <div class="form-froup">
+                             <label for="exampleInputEmail">E-mail адрес:</label>
+                             <input type="email" class="form-control" id="exampleInputEmail" aria-describdby="emailHelp" placeholder="Email" required>
+                             <small id="emailHelp" class="form-text text-muted">Введите ваш e-mail</small>
+                         </div>
+                         <div class="form-froup">
+                             <label for="exampleInputPass">Пароль:</label>
+                             <input type="password" class="form-control" id="exampleInputpass" aria-describdby="passHelp" placeholder="Password" required>
+                             <small id="passHelp" class="form-text text-muted">Пароль должен содержать минимум 8 символов</small>
+                         </div>
+                         <div class="form-check">
+                             <label class="form-check-label py-2">
+                                 <input type="checkbox" class="form-check-input">Запомнить меня</input>
+                             </label>
+                         </div>
+                         <button type="submit" class="btn btn-primary">Отправить</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+<footer>
+    <div class="container">
+        <div class="d-sm-flex justify-content-between">
+            <div class="footer-left">
+                <p>Тестовий сайт 2019 год</p>
+            </div>
+            <div class="footer-right">
+                <span>Follow</span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+
+
+
+</body>
+</html>
